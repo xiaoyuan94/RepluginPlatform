@@ -4,16 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".activity.GoPluginActivity">
 
     <Button
-        android:id="@+id/bt_go_plugin"
+        android:id="@+id/bt_plugin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="插件跳转演示界面" />
-    <Button
-        android:id="@+id/bt_plugin_install"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="安装插件界面" />
+        android:text="跳转插件" />
 </LinearLayout>
