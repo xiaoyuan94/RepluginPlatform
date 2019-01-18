@@ -1,0 +1,36 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+    repositories {
+        maven {
+            name "aliyunmaven"
+            url "http://maven.aliyun.com/nexus/content/groups/public/"
+        }
+        jcenter(){ url 'http://jcenter.bintray.com/'}
+        maven { url 'https://jitpack.io' }
+        google()
+        mavenCentral()
+        
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.1.4'
+        classpath 'com.qihoo360.replugin:replugin-host-gradle:2.3.1'
+    }
+}
+
+allprojects {
+    repositories {
+        maven {
+            name "aliyunmaven"
+            url "http://maven.aliyun.com/nexus/content/groups/public/"
+        }
+        jcenter(){ url 'http://jcenter.bintray.com/'}
+        maven { url 'https://jitpack.io' }
+        google()
+        mavenCentral()
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
