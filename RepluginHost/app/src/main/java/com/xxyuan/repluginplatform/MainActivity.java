@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
+import com.xxyuan.repluginplatform.activity.DownActivity;
 import com.xxyuan.repluginplatform.activity.GoPluginActivity;
 import com.xxyuan.repluginplatform.activity.InstallPluginActivity;
 
@@ -27,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
         ButterKnife.bind(this);
     }
 
-    @OnClick({R.id.bt_go_plugin,R.id.bt_plugin_install})
+    @OnClick({R.id.bt_go_plugin,R.id.bt_plugin_install,R.id.bt_plugin_down})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.bt_go_plugin:
@@ -35,6 +36,9 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case R.id.bt_plugin_install:
                 startActivity(new Intent(this, InstallPluginActivity.class));
+                break;
+            case R.id.bt_plugin_down:
+                startActivity(new Intent(this, DownActivity.class));
                 break;
         }
     }

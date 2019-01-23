@@ -16,4 +16,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="安装插件界面" />
+    <Button
+        android:id="@+id/bt_plugin_down"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="下载插件" />
 </LinearLayout>

@@ -8,6 +8,7 @@ import com.qihoo360.replugin.RePluginApplication;
 import com.qihoo360.replugin.RePluginCallbacks;
 import com.qihoo360.replugin.RePluginConfig;
 import com.xxyuan.repluginplatform.BuildConfig;
+import com.xxyuan.repluginplatform.http.InitOkgo;
 
 /**
  * author:xuxiaoyuan
@@ -24,6 +25,13 @@ public class Application extends RePluginApplication {
     public void onCreate() {
         super.onCreate();
         RePlugin.App.onCreate();
+        initOkhttp();
+    }
+    /**
+     * 初始化okhttp
+     */
+    private void initOkhttp() {
+        new InitOkgo().initOkGo(this);
     }
 
     @Override
