@@ -1,10 +1,12 @@
 package com.xxyuan.repluginplatform.activity;
 
 import android.os.Bundle;
+import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
+import com.lzy.okserver.OkDownload;
 import com.xxyuan.repluginplatform.R;
 import com.xxyuan.repluginplatform.adapter.PluginAdapter;
 import com.xxyuan.repluginplatform.bean.RepluginInfoBean;
@@ -32,6 +34,11 @@ public class DownActivity extends AppCompatActivity {
     }
 
     private void initData() {
+        //初始化下载控件
+        OkDownload.getInstance().setFolder(Environment.getExternalStorageDirectory()
+                .getAbsolutePath() + "/down/");
+        OkDownload.getInstance().getThreadPool().setCorePoolSize(3);
+
         mList = new ArrayList<>();
         RepluginInfoBean apk1 = new RepluginInfoBean();
         apk1.setRePluginName("微信");
