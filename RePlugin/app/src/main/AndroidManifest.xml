@@ -25,9 +25,9 @@
     <!--&lt;!&ndash;插件名称&ndash;&gt;-->
     <!--<meta-data-->
         <!--android:name="com.qihoo360.plugin.name"-->
-        <!--android:value="replugin01" />-->
+        <!--android:value="replugin" />-->
     <!--&lt;!&ndash;插件版本&ndash;&gt;-->
     <!--<meta-data-->
         <!--android:name="com.qihoo360.plugin.version.ver"-->
-        <!--android:value="1" />-->
+        <!--android:value="3" />-->
 </manifest>
