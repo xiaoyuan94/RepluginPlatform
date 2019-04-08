@@ -12,7 +12,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".MainActivity"
+        <activity
+            android:name=".MainActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -21,5 +22,12 @@
             </intent-filter>
         </activity>
     </application>
-
+    <!--&lt;!&ndash;插件名称&ndash;&gt;-->
+    <!--<meta-data-->
+        <!--android:name="com.qihoo360.plugin.name"-->
+        <!--android:value="replugin01" />-->
+    <!--&lt;!&ndash;插件版本&ndash;&gt;-->
+    <!--<meta-data-->
+        <!--android:name="com.qihoo360.plugin.version.ver"-->
+        <!--android:value="1" />-->
 </manifest>

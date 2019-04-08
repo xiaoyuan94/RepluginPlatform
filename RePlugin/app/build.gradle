@@ -20,15 +20,15 @@ android {
 //插件配置
 apply plugin: 'replugin-plugin-gradle'
 
-repluginPluginConfig {
+//repluginPluginConfig {
 
 //插件名
-    pluginName = "replugin"
+//    pluginName = "replugin01"
 //宿主app的包名
-    hostApplicationId = "com.xxyuan.repluginplatform"
+//    hostApplicationId = "com.xxyuan.repluginplatform"
 //宿主app的启动activity
-    hostAppLauncherActivity = "com.xxyuan.repluginplatform.MainActivity"
-}
+//    hostAppLauncherActivity = "com.xxyuan.repluginplatform.MainActivity"
+//}
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])

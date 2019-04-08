@@ -30,11 +30,11 @@ public class GoPluginActivity extends AppCompatActivity {
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.bt_plugin:
-                if (RePlugin.isPluginInstalled("replugin")) {
+                if (RePlugin.isPluginInstalled("replugin01")) {
                     RePlugin.startActivity(GoPluginActivity.this,
-                            RePlugin.createIntent("replugin", "com.xxyuan.replugin.MainActivity"));
+                            RePlugin.createIntent("replugin01", "com.xxyuan.replugin.MainActivity"));
                 } else {
-                    Toast.makeText(GoPluginActivity.this, "You must install replugin first!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(GoPluginActivity.this, "请安装插件", Toast.LENGTH_SHORT).show();
                 }
                 break;
         }
