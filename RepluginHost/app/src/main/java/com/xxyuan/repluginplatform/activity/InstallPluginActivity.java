@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.qihoo360.i.Factory;
 import com.qihoo360.replugin.RePlugin;
 import com.qihoo360.replugin.model.PluginInfo;
 import com.qihoo360.replugin.utils.FileUtils;
@@ -46,13 +47,13 @@ public class InstallPluginActivity extends AppCompatActivity {
             case R.id.bt_install_plugin:
 //                String apkPath = "external" + File.separator + "replugin.apk";
 //                String apkPath = "file:///android_asset/external/" + "replugin.apk";
-                String apkPath = Environment.getExternalStorageDirectory().getAbsolutePath() + File.separator + "down" + File.separator + "replugin01.apk";
-                InstallPluginUtils.startRePlugin(this, "replugin01", apkPath);
+                String apkPath = Environment.getExternalStorageDirectory().getAbsolutePath() + File.separator + "down" + File.separator + "replugin.apk";
+                InstallPluginUtils.startRePlugin(this, "replugin", apkPath);
                 break;
             case R.id.bt_start_plugin:
                 List<PluginInfo> pluginInfoList = RePlugin.getPluginInfoList();
-                if (RePlugin.isPluginInstalled("replugin01")) {
-                    openActivity(this,new Intent(),"replugin01","com.xxyuan.replugin.MainActivity");
+                if (RePlugin.isPluginInstalled("com.xxyuan.replugin")) {
+                    openActivity(this,new Intent(),"com.xxyuan.replugin","com.xxyuan.replugin.MainActivity");
                 } else {
                     Toast.makeText(InstallPluginActivity.this, "请安装插件", Toast.LENGTH_SHORT).show();
                 }

@@ -4,7 +4,7 @@
     package="com.xxyuan.replugin">
 
     <application
-        android:name=".BaseApplication"
+        android:name="com.xxyuan.replugin.BaseApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -13,7 +13,7 @@
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
         <activity
-            android:name=".MainActivity"
+            android:name="com.xxyuan.replugin.MainActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
