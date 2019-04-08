@@ -52,8 +52,8 @@ public class InstallPluginActivity extends AppCompatActivity {
                 break;
             case R.id.bt_start_plugin:
                 List<PluginInfo> pluginInfoList = RePlugin.getPluginInfoList();
-                if (RePlugin.isPluginInstalled("com.xxyuan.replugin")) {
-                    openActivity(this,new Intent(),"com.xxyuan.replugin","com.xxyuan.replugin.MainActivity");
+                if (RePlugin.isPluginInstalled("replugin")) {
+                    openActivity(this,new Intent(),"replugin","com.xxyuan.replugin.MainActivity");
                 } else {
                     Toast.makeText(InstallPluginActivity.this, "请安装插件", Toast.LENGTH_SHORT).show();
                 }

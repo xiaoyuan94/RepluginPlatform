@@ -21,6 +21,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <meta-data
+            android:name="com.qihoo360.plugin.name"
+            android:value="replugin" />
     </application>
     <!--&lt;!&ndash;插件名称&ndash;&gt;-->
     <!--<meta-data-->

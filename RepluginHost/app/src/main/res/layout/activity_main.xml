@@ -7,12 +7,12 @@
     tools:context=".MainActivity">
 
     <Button
+        android:visibility="gone"
         android:id="@+id/bt_go_plugin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="插件跳转演示界面" />
     <Button
-        android:visibility="gone"
         android:id="@+id/bt_plugin_install"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
