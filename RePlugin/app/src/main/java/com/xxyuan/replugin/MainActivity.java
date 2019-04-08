@@ -1,5 +1,6 @@
 package com.xxyuan.replugin;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
@@ -9,6 +10,8 @@ import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
+import com.qihoo360.replugin.RePlugin;
+import com.qihoo360.replugin.model.PluginInfo;
 import com.xxyuan.replugin.utils.SharedPrefsUtils;
 
 import butterknife.BindView;
@@ -37,10 +40,9 @@ public class MainActivity extends AppCompatActivity {
         String goPlugin = intent.getStringExtra("goPlugin");
         Log.d(getClass().getSimpleName(), "传递过来的值：" + goPlugin);
         try {
-            PackageManager manager = this.getPackageManager();
-            PackageInfo info = manager.getPackageInfo(this.getPackageName(), 0);
-            tvPluginName.setText("relugin界面：V" + info.versionName);
-        } catch (PackageManager.NameNotFoundException e) {
+            PluginInfo pluginInfo = RePlugin.getPluginInfo("com.xxyuan.replugin");
+            tvPluginName.setText("relugin界面：V" + pluginInfo.getVersion());
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
