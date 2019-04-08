@@ -1,5 +1,8 @@
 package com.xxyuan.replugin;
 
+import android.content.Intent;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -18,12 +21,28 @@ public class MainActivity extends AppCompatActivity {
     TextView tvSaveSp;
     @BindView(R.id.tv_get_sp)
     TextView tvGetSp;
+    @BindView(R.id.tv_plugin_name)
+    TextView tvPluginName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
+        initData();
+    }
+
+    private void initData() {
+        Intent intent = getIntent();
+        String goPlugin = intent.getStringExtra("goPlugin");
+        Log.d(getClass().getSimpleName(), "传递过来的值：" + goPlugin);
+        try {
+            PackageManager manager = this.getPackageManager();
+            PackageInfo info = manager.getPackageInfo(this.getPackageName(), 0);
+            tvPluginName.setText("relugin界面：V" + info.versionName);
+        } catch (PackageManager.NameNotFoundException e) {
+            e.printStackTrace();
+        }
     }
 
     @OnClick({R.id.tv_save_sp, R.id.tv_get_sp})

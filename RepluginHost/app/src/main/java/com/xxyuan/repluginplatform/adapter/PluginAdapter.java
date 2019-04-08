@@ -19,6 +19,7 @@ import com.lzy.okgo.request.GetRequest;
 import com.lzy.okserver.OkDownload;
 import com.lzy.okserver.download.DownloadTask;
 import com.qihoo360.replugin.RePlugin;
+import com.qihoo360.replugin.model.PluginInfo;
 import com.xxyuan.repluginplatform.R;
 import com.xxyuan.repluginplatform.activity.InstallPluginActivity;
 import com.xxyuan.repluginplatform.bean.RepluginInfoBean;
@@ -64,8 +65,12 @@ public class PluginAdapter extends RecyclerView.Adapter<PluginAdapter.ViewHolder
         viewHolder.mRl_plugin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (RePlugin.isPluginInstalled("com.xxyuan.replugin")) {
-                    openActivity(mContext,new Intent(),"com.xxyuan.replugin","com.xxyuan.replugin.MainActivity");
+                PluginInfo pluginInfo = RePlugin.getPluginInfo("com.xxyuan.replugin");
+                if (RePlugin.isPluginInstalled("com.xxyuan.replugin")
+                    &&pluginInfo.getVersion()>1) {
+                    Intent intent = new Intent();
+                    intent.putExtra("goPlugin","goPlugin");
+                    openActivity(mContext,intent,"com.xxyuan.replugin","com.xxyuan.replugin.MainActivity");
                 } else {
                     Toast.makeText(mContext, "请安装插件", Toast.LENGTH_SHORT).show();
                     //这里只是演示，表示请求可以传参，怎么传都行，和okgo使用方法一样
