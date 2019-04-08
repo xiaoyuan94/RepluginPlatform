@@ -65,12 +65,12 @@ public class PluginAdapter extends RecyclerView.Adapter<PluginAdapter.ViewHolder
         viewHolder.mRl_plugin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                PluginInfo pluginInfo = RePlugin.getPluginInfo("com.xxyuan.replugin");
-                if (RePlugin.isPluginInstalled("com.xxyuan.replugin")
-                    &&pluginInfo.getVersion()>3) {
+                PluginInfo pluginInfo = RePlugin.getPluginInfo("replugin");
+                if (RePlugin.isPluginInstalled("replugin")
+                    &&pluginInfo.getVersion()>4) {
                     Intent intent = new Intent();
                     intent.putExtra("goPlugin","goPlugin");
-                    openActivity(mContext,intent,"com.xxyuan.replugin","com.xxyuan.replugin.MainActivity");
+                    openActivity(mContext,intent,"replugin","com.xxyuan.replugin.MainActivity");
                 } else {
                     Toast.makeText(mContext, "请安装插件", Toast.LENGTH_SHORT).show();
                     //这里只是演示，表示请求可以传参，怎么传都行，和okgo使用方法一样
