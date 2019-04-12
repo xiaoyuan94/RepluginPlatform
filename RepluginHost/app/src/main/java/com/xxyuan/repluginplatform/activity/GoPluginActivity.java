@@ -1,5 +1,7 @@
 package com.xxyuan.repluginplatform.activity;
 
+import android.content.ComponentName;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -30,13 +32,29 @@ public class GoPluginActivity extends AppCompatActivity {
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.bt_plugin:
-                if (RePlugin.isPluginInstalled("replugin")) {
-                    RePlugin.startActivity(GoPluginActivity.this,
-                            RePlugin.createIntent("replugin", "com.xxyuan.replugin.MainActivity"));
+                if (RePlugin.isPluginInstalled("MixPlugin")) {
+                    Intent intent = new Intent();
+                    intent.putExtra("web_url","http://192.168.22.91");
+                    openActivity(this,intent,"MixPlugin","com.sgcc.pda.mix.h5.activity.MixWebViewActivity");
+//                    RePlugin.startActivity(GoPluginActivity.this,
+//                            RePlugin.createIntent("MixPlugin", "com.sgcc.pda.mix.h5.activity.MixWebViewActivity"));
+
                 } else {
                     Toast.makeText(GoPluginActivity.this, "You must install replugin first!", Toast.LENGTH_SHORT).show();
                 }
                 break;
         }
+    }
+    /**
+     * 打开插件的Activity 可带参数传递
+     *
+     * @param context
+     * @param intent
+     * @param pluginName
+     * @param activityName
+     */
+    public void openActivity(Context context, Intent intent, String pluginName, String activityName) {
+        intent.setComponent(new ComponentName(pluginName, activityName));
+        RePlugin.startActivity(context, intent);
     }
 }

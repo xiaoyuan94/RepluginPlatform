@@ -26,4 +26,11 @@
         android:layout_height="wrap_content"
         android:text="取出sp" />
 
+    <TextView
+        android:id="@+id/tv_get_mixplugin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="跳转到MixPlugin" />
+
+
 </LinearLayout>

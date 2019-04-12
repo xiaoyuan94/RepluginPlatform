@@ -67,7 +67,7 @@ public class PluginAdapter extends RecyclerView.Adapter<PluginAdapter.ViewHolder
             public void onClick(View v) {
                 PluginInfo pluginInfo = RePlugin.getPluginInfo("replugin");
                 if (RePlugin.isPluginInstalled("replugin")
-                    &&pluginInfo.getVersion()>4) {
+                    &&pluginInfo.getVersion()>5) {
                     Intent intent = new Intent();
                     intent.putExtra("goPlugin","goPlugin");
                     openActivity(mContext,intent,"replugin","com.xxyuan.replugin.MainActivity");

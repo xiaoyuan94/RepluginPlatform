@@ -6,9 +6,17 @@ android {
         applicationId "com.xxyuan.replugin"
         minSdkVersion 19
         targetSdkVersion 28
-        versionCode 5
-        versionName "1.0.5"
+        versionCode 6
+        versionName "1.0.6"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    //打包输出apk的名字
+    android.applicationVariants.all {
+        variant ->
+            variant.outputs.all {
+                //这里修改apk文件名
+                outputFileName = "replugin.apk"
+            }
     }
     buildTypes {
         release {
@@ -35,7 +43,7 @@ dependencies {
     implementation 'com.android.support:appcompat-v7:28.0.0'
     implementation 'com.android.support.constraint:constraint-layout:1.1.3'
     implementation 'com.qihoo360.replugin:replugin-plugin-lib:2.3.1'
-//黄油刀
+    //黄油刀
     implementation 'com.jakewharton:butterknife:8.8.1'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
 }
